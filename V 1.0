@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>WBN Global Inc. — Brand Style Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --robin:#59c2eb;
+  --robin-dark:#2b99c8;
+  --robin-deep:#1a7aaa;
+  --robin-dim:#a0d4ee;
+  --robin-faint:#e8f6fd;
+  --black:#111111;
+  --dark:#2a2a2a;
+  --mid:#555555;
+  --muted:#999999;
+  --line:#c8e8f5;
+  --line-2:#e0f2fb;
+  --white:#ffffff;
+  --bg:#f5fbfe;
+  --green:#0e7a3a;
+  --green-bg:#e8f7ee;
+  --green-border:#a0d8b8;
+  --amber:#8a5e00;
+  --amber-bg:#fdf5dc;
+  --amber-border:#e0c870;
+  --red:#b52020;
+  --red-bg:#fdf0f0;
+  --red-border:#e0a8a8;
+  --mono:'Source Code Pro',monospace;
+  --head:'Oswald',sans-serif;
+  --body:'Libre Franklin',sans-serif;
+}
+
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--black);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  background:var(--robin-dark);overflow:hidden;height:30px;
+  display:flex;align-items:center;border-bottom:1px solid var(--robin-deep);
+}
+.ticker-label{
+  font-family:var(--head);font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  background:var(--black);color:var(--robin);
+  padding:0 14px;height:100%;display:flex;align-items:center;
+  white-space:nowrap;flex-shrink:0;border-right:2px solid var(--robin-deep);
+}
+.ticker-track{display:flex;animation:ticker 36s linear infinite;white-space:nowrap;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{font-family:var(--mono);font-size:11px;color:#fff;padding:0 28px 0 0;}
+.ticker-dot{color:rgba(255,255,255,.4);margin-right:28px;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── MASTHEAD ── */
+.masthead{background:var(--white);border-bottom:3px solid var(--robin);padding:0 40px;}
+.masthead-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-badge{background:var(--robin);font-family:var(--head);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:3px 9px;border-radius:2px;}
+.brand-name{font-family:var(--head);font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--black);line-height:1;}
+.brand-name sup{font-size:10px;color:var(--muted);vertical-align:super;}
+.brand-sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;border-left:1px solid var(--line);padding-left:12px;margin-left:4px;}
+.masthead-right{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;line-height:1.6;}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--robin);margin-right:5px;animation:pulse 1.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.2;}}
+
+/* ── NAV ── */
+.nav-bar{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;gap:0;}
+.nav-tab{appearance:none;border:none;background:none;cursor:pointer;font-family:var(--head);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:13px 22px;border-bottom:3px solid transparent;transition:color .14s,border-color .14s,background .14s;display:flex;align-items:center;gap:7px;white-space:nowrap;}
+.nav-tab:hover{color:var(--black);background:var(--bg);}
+.nav-tab.on{color:var(--robin-dark);border-bottom-color:var(--robin);}
+.nav-tab svg{width:13px;height:13px;opacity:.5;flex-shrink:0;}
+.nav-tab.on svg{opacity:1;}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1100px;margin:0 auto;padding:48px 40px 100px;}
+
+/* ── SECTION ── */
+.sec{margin-bottom:60px;}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.sec-bar{width:4px;height:22px;background:var(--robin);flex-shrink:0;border-radius:1px;}
+.sec-title{font-family:var(--head);font-size:20px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--black);}
+.sec-rule{flex:1;height:1px;background:var(--line);}
+.sec-stamp{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+
+/* ── COLOR SWATCHES ── */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+.swatch{border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+.swatch-color{height:80px;}
+.swatch-info{background:var(--white);padding:10px 12px;}
+.swatch-name{font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--black);margin-bottom:3px;}
+.swatch-hex{font-family:var(--mono);font-size:11px;color:var(--mid);}
+.swatch-use{font-size:11px;color:var(--muted);margin-top:3px;font-family:var(--body);}
+
+/* ── TYPE SPECIMENS ── */
+.type-block{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:24px 28px;margin-bottom:12px;}
+.type-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.t-display{font-family:var(--head);font-size:40px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--black);line-height:1.05;}
+.t-head-lg{font-family:var(--head);font-size:28px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--black);}
+.t-head-md{font-family:var(--head);font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--black);}
+.t-head-sm{font-family:var(--head);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--black);}
+.t-body{font-family:var(--body);font-size:15px;color:var(--black);line-height:1.7;}
+.t-body-sm{font-family:var(--body);font-size:13px;color:var(--mid);line-height:1.65;}
+.t-mono{font-family:var(--mono);font-size:13px;color:var(--black);letter-spacing:.02em;}
+.t-mono-sm{font-family:var(--mono);font-size:11px;color:var(--mid);letter-spacing:.04em;}
+.t-label{font-family:var(--head);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+
+/* ── BUTTONS ── */
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.btn{appearance:none;border:1px solid transparent;cursor:pointer;font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border-radius:2px;transition:opacity .14s,transform .12s;display:inline-flex;align-items:center;gap:7px;}
+.btn:hover{opacity:.82;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--robin);color:#fff;border-color:var(--robin);}
+.btn-primary-dk{background:var(--robin-dark);color:#fff;border-color:var(--robin-dark);}
+.btn-outline{background:transparent;color:var(--robin-dark);border-color:var(--robin-dark);}
+.btn-outline:hover{background:var(--robin-faint);opacity:1;}
+.btn-ghost{background:transparent;color:var(--mid);border-color:var(--line);}
+.btn-ghost:hover{background:var(--bg);color:var(--black);opacity:1;}
+.btn-danger{background:var(--red-bg);color:var(--red);border-color:var(--red-border);}
+.btn-success{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.btn-warning{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border);}
+.btn-sm{padding:6px 12px;font-size:10px;}
+.btn-lg{padding:12px 24px;font-size:13px;}
+
+/* ── BADGES ── */
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.badge{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:2px;border:1px solid transparent;white-space:nowrap;}
+.badge-live{background:var(--robin-faint);color:var(--robin-dark);border-color:var(--robin-dim);}
+.badge-approved{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.badge-pending{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border);}
+.badge-alert{background:var(--red-bg);color:var(--red);border-color:var(--red-border);}
+.badge-neutral{background:var(--bg);color:var(--mid);border-color:var(--line);}
+.badge-high{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.badge-medium{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border);}
+.badge-low{background:var(--red-bg);color:var(--red);border-color:var(--red-border);}
+
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.card{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:2px;overflow:hidden;transition:border-color .14s,border-left-color .14s;}
+.card:hover{border-color:var(--robin-dim);border-left-color:var(--robin);}
+.card.card-live{border-left-color:var(--robin-dim);}
+.card.card-live:hover{border-left-color:var(--robin);}
+.card-top{padding:14px 16px 8px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.card-title{font-family:var(--head);font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--black);margin-bottom:3px;}
+.card-meta{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.5;}
+.card-body{padding:0 16px 14px;font-size:13px;color:var(--dark);line-height:1.65;}
+.card-tip{background:var(--bg);border-left:2px solid var(--robin);padding:8px 12px;margin-bottom:7px;font-size:13px;}
+.card-why{font-size:12px;color:var(--muted);padding:6px 12px;border-left:2px solid var(--line);font-style:italic;}
+.card-acts{padding:0 16px 12px;display:flex;gap:7px;flex-wrap:wrap;}
+
+/* ── STAT BLOCKS ── */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.stat-block{background:var(--white);border:1px solid var(--line);border-top:2px solid var(--robin-dim);padding:16px 18px 13px;border-radius:2px;}
+.stat-n{font-family:var(--mono);font-size:32px;font-weight:600;color:var(--robin-dark);letter-spacing:-.02em;line-height:1;margin-bottom:5px;}
+.stat-l{font-family:var(--head);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+
+/* ── FORM ELEMENTS ── */
+.form-demo{background:var(--white);border:1px solid var(--line);border-top:2px solid var(--robin);padding:28px;border-radius:2px;max-width:560px;}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.f{display:flex;flex-direction:column;gap:6px;}
+.f.full{grid-column:1/-1;}
+.f label{font-family:var(--head);font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;}
+.f input,.f select,.f textarea{font-family:var(--mono);font-size:12px;color:var(--black);background:var(--bg);border:1px solid var(--line);padding:9px 12px;outline:none;width:100%;border-radius:2px;transition:border-color .14s,box-shadow .14s;}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--robin-dark);box-shadow:0 0 0 3px rgba(89,194,235,.18);background:var(--white);}
+.f textarea{min-height:80px;resize:vertical;line-height:1.55;}
+.chk-row{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);padding:10px 12px;border-radius:2px;}
+.chk-row input[type=checkbox]{width:14px;height:14px;margin-top:2px;accent-color:var(--robin-dark);flex-shrink:0;}
+.chk-txt{font-size:12px;color:var(--mid);line-height:1.5;font-family:var(--mono);}
+
+/* ── NOTICES ── */
+.notice-stack{display:flex;flex-direction:column;gap:10px;}
+.notice{padding:11px 16px;border-radius:2px;font-family:var(--mono);font-size:12px;line-height:1.55;letter-spacing:.02em;}
+.notice-info{background:var(--robin-faint);border:1px solid var(--robin-dim);border-left:3px solid var(--robin);color:var(--robin-deep);}
+.notice-success{background:var(--green-bg);border:1px solid var(--green-border);border-left:3px solid var(--green);color:var(--green);}
+.notice-warning{background:var(--amber-bg);border:1px solid var(--amber-border);border-left:3px solid var(--amber);color:var(--amber);}
+.notice-danger{background:var(--red-bg);border:1px solid var(--red-border);border-left:3px solid var(--red);color:var(--red);}
+
+/* ── SECTION HEADERS ── */
+.sec-head-demo{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:0;}
+
+/* ── SPACING ── */
+.spacing-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;}
+.sp-block{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.sp-vis{background:var(--robin-faint);border:1px solid var(--robin-dim);border-radius:2px;width:40px;}
+.sp-label{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center;}
+
+/* ── TICKER DEMO ── */
+.ticker-demo{border:1px solid var(--line);border-radius:4px;overflow:hidden;}
+
+/* ── PIN DEMO ── */
+.pin-demo{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--robin);padding:28px;border-radius:2px;max-width:320px;text-align:center;}
+.pin-in{font-family:var(--mono);font-size:22px;letter-spacing:.3em;text-align:center;width:100%;background:var(--bg);border:1px solid var(--line);padding:12px;outline:none;color:var(--black);margin-bottom:12px;border-radius:2px;transition:border-color .14s,box-shadow .14s;}
+.pin-in:focus{border-color:var(--robin-dark);box-shadow:0 0 0 3px rgba(89,194,235,.18);}
+
+/* ── DO / DON'T ── */
+.dos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.do-block{border-radius:4px;overflow:hidden;border:1px solid var(--line);}
+.do-head{font-family:var(--head);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;}
+.do-head.do{background:var(--green-bg);color:var(--green);}
+.do-head.dont{background:var(--red-bg);color:var(--red);}
+.do-body{padding:16px;background:var(--white);font-size:13px;color:var(--mid);line-height:1.65;}
+.do-body ul{padding-left:16px;}
+.do-body ul li{margin-bottom:5px;}
+
+/* ── FOOTER ── */
+.guide-footer{border-top:1px solid var(--line);background:var(--white);padding:18px 40px;text-align:center;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+.guide-footer span{color:var(--robin-dark);}
+
+@media(max-width:720px){
+  .wrap{padding:28px 18px 60px;}
+  .swatch-grid{grid-template-columns:1fr 1fr;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .fgrid,.dos-grid{grid-template-columns:1fr;}
+  .nav-inner,.masthead-inner{padding:0 18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">WBN Brand</div>
+  <div style="overflow:hidden;flex:1;">
+    <div class="ticker-track">
+      <span class="ticker-item">WBN Global Inc. Brand Style Guide</span>
+      <span class="ticker-dot">◆</span>
+      <span class="ticker-item">Robin Blue · Oswald · Source Code Pro · Libre Franklin</span>
+      <span class="ticker-dot">◆</span>
+      <span class="ticker-item">ParkingCast™ · NewsCast™ · SpaceCast™ · WeatherCast™</span>
+      <span class="ticker-dot">◆</span>
+      <span class="ticker-item">WBN Global Inc. Brand Style Guide</span>
+      <span class="ticker-dot">◆</span>
+      <span class="ticker-item">Robin Blue · Oswald · Source Code Pro · Libre Franklin</span>
+      <span class="ticker-dot">◆</span>
+      <span class="ticker-item">ParkingCast™ · NewsCast™ · SpaceCast™ · WeatherCast™</span>
+      <span class="ticker-dot">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <div class="brand-badge">Brand</div>
+      <div class="brand-name">WBN Global Inc.<sup>™</sup></div>
+      <div class="brand-sub">Style Guide v1.0</div>
+    </div>
+    <div class="masthead-right">
+      <div><span class="live-dot"></span><span id="clk">--:--:--</span></div>
+      <div id="clkd" style="font-size:10px;margin-top:2px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <button class="nav-tab on" onclick="scrollTo('colors')">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><circle cx="7" cy="7" r="2"/></svg>
+      Colours
+    </button>
+    <button class="nav-tab" onclick="scrollTo('type')">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 3h10M7 3v8M4 11h6"/></svg>
+      Typography
+    </button>
+    <button class="nav-tab" onclick="scrollTo('components')">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg>
+      Components
+    </button>
+    <button class="nav-tab" onclick="scrollTo('usage')">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h10M2 7h7M2 10h5"/></svg>
+      Usage
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ══ COLOURS ══ -->
+  <div class="sec" id="colors">
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <div class="sec-title">Colour System</div>
+      <div class="sec-rule"></div>
+      <div class="sec-stamp">Brand Standard</div>
+    </div>
+
+    <p style="font-size:14px;color:var(--mid);margin-bottom:20px;line-height:1.65;">The WBN colour system is anchored by Robin Blue — a clear, confident sky blue that reads as intelligent and accessible. All casts use this system consistently.</p>
+
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Primary Palette</div>
+    <div class="swatch-grid" style="margin-bottom:24px;">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#59c2eb;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Blue</div><div class="swatch-hex">#59c2eb</div><div class="swatch-use">Primary accent, buttons, active states</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2b99c8;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Dark</div><div class="swatch-hex">#2b99c8</div><div class="swatch-use">Hover states, ticker bar, borders</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1a7aaa;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Deep</div><div class="swatch-hex">#1a7aaa</div><div class="swatch-use">Dark accents, pressed states</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#a0d4ee;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Dim</div><div class="swatch-hex">#a0d4ee</div><div class="swatch-use">Borders, dividers, light accents</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e8f6fd;border:1px solid #c8e8f5;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Faint</div><div class="swatch-hex">#e8f6fd</div><div class="swatch-use">Badge backgrounds, hover fills</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#c8e8f5;"></div>
+        <div class="swatch-info"><div class="swatch-name">Robin Line</div><div class="swatch-hex">#c8e8f5</div><div class="swatch-use">Borders, section rules, dividers</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Neutrals</div>
+    <div class="swatch-grid" style="margin-bottom:24px;">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#111111;"></div>
+        <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">#111111</div><div class="swatch-use">Primary text, headings</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2a2a2a;"></div>
+        <div class="swatch-info"><div class="swatch-name">Dark</div><div class="swatch-hex">#2a2a2a</div><div class="swatch-use">Body text, card content</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#555555;"></div>
+        <div class="swatch-info"><div class="swatch-name">Mid</div><div class="swatch-hex">#555555</div><div class="swatch-use">Secondary text, descriptions</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#999999;"></div>
+        <div class="swatch-info"><div class="swatch-name">Muted</div><div class="swatch-hex">#999999</div><div class="swatch-use">Labels, timestamps, placeholders</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f5fbfe;border:1px solid #c8e8f5;"></div>
+        <div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#f5fbfe</div><div class="swatch-use">Page background</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ffffff;border:1px solid #c8e8f5;"></div>
+        <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#ffffff</div><div class="swatch-use">Cards, panels, form backgrounds</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Status Colours</div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0e7a3a;"></div>
+        <div class="swatch-info"><div class="swatch-name">Success</div><div class="swatch-hex">#0e7a3a</div><div class="swatch-use">Approved, confirmed, live</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8a5e00;"></div>
+        <div class="swatch-info"><div class="swatch-name">Warning</div><div class="swatch-hex">#8a5e00</div><div class="swatch-use">Pending, caution, review</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#b52020;"></div>
+        <div class="swatch-info"><div class="swatch-name">Danger</div><div class="swatch-hex">#b52020</div><div class="swatch-use">Error, delete, alert</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e8f7ee;border:1px solid #a0d8b8;"></div>
+        <div class="swatch-info"><div class="swatch-name">Success BG</div><div class="swatch-hex">#e8f7ee</div><div class="swatch-use">Success badge fill</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#fdf5dc;border:1px solid #e0c870;"></div>
+        <div class="swatch-info"><div class="swatch-name">Warning BG</div><div class="swatch-hex">#fdf5dc</div><div class="swatch-use">Pending badge fill</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#fdf0f0;border:1px solid #e0a8a8;"></div>
+        <div class="swatch-info"><div class="swatch-name">Danger BG</div><div class="swatch-hex">#fdf0f0</div><div class="swatch-use">Error badge fill</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TYPOGRAPHY ══ -->
+  <div class="sec" id="type">
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <div class="sec-title">Typography</div>
+      <div class="sec-rule"></div>
+      <div class="sec-stamp">3-Font System</div>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label">Display / Heading — Oswald (Google Fonts)</div>
+      <div class="t-display">WBN Global Inc.™</div>
+      <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--muted);">Oswald 700 · uppercase · letter-spacing: .04–.14em · used for all headings, nav tabs, labels, badges, buttons</div>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label">Heading Scale — Oswald</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div><div class="t-label" style="margin-bottom:4px;">H1 — 28–40px / 700</div><div class="t-head-lg">Neighbourhood Parking Tips</div></div>
+        <div><div class="t-label" style="margin-bottom:4px;">H2 — 20px / 600</div><div class="t-head-md">Free After 6 PM — West End</div></div>
+        <div><div class="t-label" style="margin-bottom:4px;">H3 — 14–15px / 600</div><div class="t-head-sm">Cornwall Ave near Vanier Park</div></div>
+        <div><div class="t-label" style="margin-bottom:4px;">Label — 10–11px / 600 · uppercase · wide spacing</div><div class="t-label">Approved Tips &nbsp;·&nbsp; Pending Review &nbsp;·&nbsp; Confidence Level</div></div>
+      </div>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label">Body — Libre Franklin (Google Fonts)</div>
+      <div class="t-body" style="margin-bottom:10px;">Street parking along Cornwall is free on Sundays and often available even on busy beach days if you walk a few minutes from the main path. Always verify posted signage before leaving your vehicle.</div>
+      <div class="t-body-sm">Side streets can be a practical alternative when the main corridor is busy. Community-sourced guidance — all tips reviewed before publishing.</div>
+      <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--muted);">Libre Franklin 400/500 · 13–15px · line-height 1.65–1.7 · used for all body content, descriptions, paragraphs</div>
+    </div>
+
+    <div class="type-block">
+      <div class="type-label">Monospace — Source Code Pro (Google Fonts)</div>
+      <div class="t-mono" style="margin-bottom:8px;">Free After 6 PM &nbsp;·&nbsp; After 6 PM &nbsp;·&nbsp; High Confidence</div>
+      <div class="t-mono-sm">By Shawn &nbsp;·&nbsp; Kitsilano &nbsp;·&nbsp; 04-07-26 10:45 AM &nbsp;·&nbsp; #59c2eb &nbsp;·&nbsp; v2.0</div>
+      <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--muted);">Source Code Pro 400/500/600 · 10–13px · used for metadata, timestamps, hex codes, ticker text, form inputs, PIN entry, clock</div>
+    </div>
+  </div>
+
+  <!-- ══ COMPONENTS ══ -->
+  <div class="sec" id="components">
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <div class="sec-title">Components</div>
+      <div class="sec-rule"></div>
+      <div class="sec-stamp">UI Library</div>
+    </div>
+
+    <!-- Buttons -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Buttons</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Full range — all border-radius: 2px · Oswald font · uppercase</div>
+      <div class="btn-row" style="margin-bottom:14px;">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-primary-dk">Primary Dark</button>
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-ghost">Ghost</button>
+      </div>
+      <div class="btn-row" style="margin-bottom:14px;">
+        <button class="btn btn-success">Approve</button>
+        <button class="btn btn-warning">Pending</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Badges &amp; Status Tags</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Source Code Pro · 9px · uppercase · border-radius: 2px</div>
+      <div class="badge-row" style="margin-bottom:10px;">
+        <span class="badge badge-live">Live</span>
+        <span class="badge badge-approved">Approved</span>
+        <span class="badge badge-pending">Pending</span>
+        <span class="badge badge-alert">Alert</span>
+        <span class="badge badge-neutral">Neutral</span>
+      </div>
+      <div class="badge-row">
+        <span class="badge badge-high">High Confidence</span>
+        <span class="badge badge-medium">Medium Confidence</span>
+        <span class="badge badge-low">Low Confidence</span>
+      </div>
+    </div>
+
+    <!-- Notice bars -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Notice Bars</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Left-border accent · Source Code Pro · 12px</div>
+      <div class="notice-stack">
+        <div class="notice notice-info">ℹ Parking regulations change without notice. These tips are community guidance only.</div>
+        <div class="notice notice-success">✓ Tip submitted for review — thank you. It will appear in the feed once approved.</div>
+        <div class="notice notice-warning">⚠ This submission is pending review. An admin will approve or request changes.</div>
+        <div class="notice notice-danger">✕ Incorrect PIN — please try again.</div>
+      </div>
+    </div>
+
+    <!-- Section Header -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Section Headers</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">4px Robin bar · Oswald 600 · rule line · stamp (mono)</div>
+      <div class="sec-head-demo">
+        <div class="sec-bar"></div>
+        <div class="sec-title" style="font-size:17px;">Free &amp; Low-Cost Parking — Vancouver</div>
+        <div class="sec-rule"></div>
+        <div class="sec-stamp">4 tips live</div>
+      </div>
+    </div>
+
+    <!-- Stat Blocks -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Stat Blocks</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Robin top border · DM Mono 32px number · Oswald label</div>
+      <div class="stat-grid">
+        <div class="stat-block"><div class="stat-n">24</div><div class="stat-l">Approved Tips</div></div>
+        <div class="stat-block"><div class="stat-n">9</div><div class="stat-l">Neighbourhoods</div></div>
+        <div class="stat-block"><div class="stat-n">6</div><div class="stat-l">Pending Review</div></div>
+        <div class="stat-block"><div class="stat-n">30</div><div class="stat-l">Total Submissions</div></div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Tip Cards</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Left border accent (robin on approved) · hover state · Oswald title</div>
+      <div class="card-grid">
+        <div class="card card-live">
+          <div class="card-top">
+            <div>
+              <div class="card-title">Kitsilano — Cornwall Ave</div>
+              <div class="card-meta">Free on Sundays · Sundays all day</div>
+            </div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+              <span class="badge badge-live">Live</span>
+              <span class="badge badge-high">High</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tip">Street parking along Cornwall is free Sundays and often available even on busy beach days.</div>
+            <div class="card-why">Free Sunday parking makes beach access easier without lot costs.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <div>
+              <div class="card-title">Mount Pleasant — Main St</div>
+              <div class="card-meta">Typically Free · Daytime 2-hour</div>
+            </div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+              <span class="badge badge-pending">Pending</span>
+              <span class="badge badge-medium">Medium</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tip">Residential side streets can be a practical alternative when the main corridor is busy.</div>
+            <div class="card-why">Side-street parking gives visitors an alternative when prime spots are full.</div>
+          </div>
+          <div class="card-acts">
+            <button class="btn btn-success btn-sm">Approve</button>
+            <button class="btn btn-outline btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Elements -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Form Elements</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Robin focus ring · Source Code Pro · Oswald labels · border-radius: 2px</div>
+      <div class="form-demo">
+        <div class="fgrid">
+          <div class="f"><label>Neighbourhood</label><input type="text" placeholder="e.g. West End"/></div>
+          <div class="f"><label>Parking Type</label>
+            <select><option>Free After 6 PM</option><option>Typically Free</option></select>
+          </div>
+          <div class="f full"><label>Parking Tip</label><textarea placeholder="Describe the situation plainly…"></textarea></div>
+          <div class="f full">
+            <div class="chk-row">
+              <input type="checkbox"/>
+              <div class="chk-txt">I understand this is general guidance only. Users must always check posted signage before parking.</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:9px;margin-top:16px;">
+          <button class="btn btn-primary">Submit for Review</button>
+          <button class="btn btn-ghost">Clear Form</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Ticker Bar</div>
+    <div class="type-block" style="margin-bottom:24px;">
+      <div class="type-label" style="margin-bottom:14px;">Robin Dark background · black label tab · white Source Code Pro text · pauses on hover</div>
+      <div class="ticker-demo">
+        <div class="ticker-wrap" style="border-radius:0;">
+          <div class="ticker-label">ParkingCast™</div>
+          <div style="overflow:hidden;flex:1;">
+            <div class="ticker-track">
+              <span class="ticker-item">Free &amp; low-cost parking tips for Vancouver neighbourhoods</span>
+              <span class="ticker-dot">◆</span>
+              <span class="ticker-item">West End · Downtown · Kitsilano · Mount Pleasant · Yaletown</span>
+              <span class="ticker-dot">◆</span>
+              <span class="ticker-item">Free &amp; low-cost parking tips for Vancouver neighbourhoods</span>
+              <span class="ticker-dot">◆</span>
+              <span class="ticker-item">West End · Downtown · Kitsilano · Mount Pleasant · Yaletown</span>
+              <span class="ticker-dot">◆</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIN Gate -->
+    <div style="margin-bottom:8px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Admin PIN Gate</div>
+    <div class="type-block">
+      <div class="type-label" style="margin-bottom:14px;">Robin top border · Source Code Pro PIN input · wide letter-spacing</div>
+      <div class="pin-demo">
+        <div style="font-family:var(--head);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">Admin Access</div>
+        <div style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:20px;">Enter PIN to manage submissions.</div>
+        <input class="pin-in" type="password" placeholder="· · · · ·"/>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ USAGE ══ -->
+  <div class="sec" id="usage">
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <div class="sec-title">Usage Guidelines</div>
+      <div class="sec-rule"></div>
+      <div class="sec-stamp">Do &amp; Don't</div>
+    </div>
+
+    <div class="dos-grid" style="margin-bottom:24px;">
+      <div class="do-block">
+        <div class="do-head do">Do</div>
+        <div class="do-body">
+          <ul>
+            <li>Use Robin Blue (#59c2eb) as the primary interactive accent — buttons, active tabs, borders, badge fills</li>
+            <li>Use Oswald for all headings, nav labels, buttons, and badges — always uppercase</li>
+            <li>Use Source Code Pro for timestamps, metadata, form inputs, ticker text, and hex values</li>
+            <li>Use Libre Franklin for all body copy and descriptions</li>
+            <li>Keep border-radius at 2px for a broadcast/editorial sharpness</li>
+            <li>Use the 3px Robin bottom border on the active nav tab</li>
+            <li>Use the 4px Robin left bar on all section headers</li>
+            <li>Keep card left borders thin (3px) — Robin on live/approved, neutral on pending</li>
+            <li>Use white (#ffffff) for all card and panel surfaces</li>
+            <li>Use #f5fbfe as the page background tint</li>
+          </ul>
+        </div>
+      </div>
+      <div class="do-block">
+        <div class="do-head dont">Don't</div>
+        <div class="do-body">
+          <ul>
+            <li>Don't use red as a primary brand colour — it's reserved for danger/delete states only</li>
+            <li>Don't use rounded corners (8px+) — they break the broadcast aesthetic</li>
+            <li>Don't use Inter, Roboto, or Arial — these are not WBN brand fonts</li>
+            <li>Don't use dark/black backgrounds for the main page — the light theme is the standard</li>
+            <li>Don't use purple gradients or generic AI colour schemes</li>
+            <li>Don't mix font weights carelessly — headings use 600–700, body uses 300–500 only</li>
+            <li>Don't put body copy in Oswald — it's a display/label font only</li>
+            <li>Don't use coloured backgrounds on cards — white only</li>
+            <li>Don't use the amber/warning colour for anything other than pending/caution states</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacing -->
+    <div style="margin-bottom:12px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Spacing Scale</div>
+    <div class="type-block">
+      <div class="type-label" style="margin-bottom:14px;">Base-4 scale — used consistently across all casts</div>
+      <div class="spacing-row">
+        <div class="sp-block"><div class="sp-vis" style="height:4px;"></div><div class="sp-label">4px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:8px;"></div><div class="sp-label">8px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:12px;"></div><div class="sp-label">12px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:16px;"></div><div class="sp-label">16px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:20px;"></div><div class="sp-label">20px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:24px;"></div><div class="sp-label">24px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:28px;"></div><div class="sp-label">28px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:32px;"></div><div class="sp-label">32px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:40px;"></div><div class="sp-label">40px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:48px;"></div><div class="sp-label">48px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:60px;"></div><div class="sp-label">60px</div></div>
+        <div class="sp-block"><div class="sp-vis" style="height:80px;"></div><div class="sp-label">80px</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="guide-footer">
+  WBN Global Inc.<span>™</span> Brand Style Guide v1.0 &nbsp;·&nbsp; ParkingCast™ · NewsCast™ · SpaceCast™ · WeatherCast™ &nbsp;·&nbsp; <span id="fstamp"></span>
+</footer>
+
+<script>
+function tick(){
+  const n=new Date();
+  document.getElementById('clk').textContent=n.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  document.getElementById('clkd').textContent=n.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+  document.getElementById('fstamp').textContent='Generated '+n.toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'});
+}
+setInterval(tick,1000);tick();
+
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('on'));
+  event.currentTarget.classList.add('on');
+}
+</script>
+</body>
+</html>

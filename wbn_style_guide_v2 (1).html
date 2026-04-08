@@ -1,0 +1,715 @@
+<!-- WBN Style Guide v2.0 — Updated to reflect TrainingCast™ palette & font system -->
+<div id="wbn-styleguide">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Libre+Franklin:wght@300;400;500&family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+  #wbn-styleguide {
+    --robin: #59c2eb;
+    --robin-dark: #2f8eb3;
+    --robin-deep: #1a7aaa;
+    --robin-dim: #b7dfef;
+    --robin-faint: #eef9fe;
+    --robin-line: #c8e8f5;
+    --bg: #dff5ff;
+    --bg2: #c8ecfb;
+    --panel: #ffffff;
+    --text: #123246;
+    --muted: #426679;
+    --success: #1f9d63;
+    --warning: #e6a23c;
+    --danger: #d9534f;
+    --success-bg: #e8f7ee;
+    --warning-bg: #fff5e8;
+    --danger-bg: #fdf0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  #wbn-styleguide * { box-sizing: border-box; }
+
+  /* Shell */
+  .sg-shell {
+    background: linear-gradient(180deg, var(--bg), var(--bg2));
+    border: 1px solid var(--robin-dim);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 28px rgba(18,50,70,.08);
+  }
+
+  /* Header */
+  .sg-masthead {
+    background: linear-gradient(180deg, #fff, #f8fdff);
+    border: 1px solid var(--robin-dim);
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .sg-masthead-brand {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--robin-dark);
+    margin-bottom: 10px;
+  }
+  .sg-masthead-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 8px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .sg-masthead-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* Ticker */
+  .sg-ticker-wrap {
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 14px;
+    padding: 10px 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .sg-ticker-inner {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: sgTicker 28s linear infinite;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .sg-ticker-label { color: var(--robin-dark); margin-right: 10px; }
+  @keyframes sgTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+  /* Nav tabs */
+  .sg-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 14px;
+    padding: 8px;
+  }
+  .sg-tab {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    transition: .15s ease;
+  }
+  .sg-tab:hover { background: var(--robin-faint); color: var(--text); }
+  .sg-tab.active { background: var(--robin); color: #fff; }
+
+  /* Section */
+  .sg-section { display: none; }
+  .sg-section.active { display: block; }
+
+  /* Panel */
+  .sg-panel {
+    background: linear-gradient(180deg, #fff, #f8fdff);
+    border: 1px solid var(--robin-dim);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .sg-panel-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--robin-dark);
+    border-bottom: 1px solid var(--robin-line);
+    padding-bottom: 10px;
+    margin: 0 0 16px;
+  }
+
+  /* Color swatches */
+  .sg-swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .sg-swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--robin-dim);
+    background: #fff;
+  }
+  .sg-swatch-color {
+    height: 60px;
+    width: 100%;
+  }
+  .sg-swatch-info {
+    padding: 8px 10px;
+  }
+  .sg-swatch-name {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .sg-swatch-hex {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .sg-swatch-use {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Typography specimens */
+  .sg-type-specimen {
+    border: 1px solid var(--robin-line);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .sg-type-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 8px;
+  }
+
+  /* Buttons */
+  .sg-btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .sg-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: .15s ease;
+    text-decoration: none;
+  }
+  .sg-btn.primary   { background: var(--robin);      color: #fff; }
+  .sg-btn.primary:hover { background: var(--robin-dark); }
+  .sg-btn.secondary { background: var(--muted);      color: #fff; }
+  .sg-btn.secondary:hover { background: #315265; }
+  .sg-btn.ghost     { background: #fff; color: var(--text); border: 1px solid var(--robin-dim); }
+  .sg-btn.ghost:hover { background: var(--robin-faint); }
+  .sg-btn.danger    { background: var(--danger);     color: #fff; }
+  .sg-btn.danger:hover { background: #b8403c; }
+  .sg-btn.success   { background: var(--success);    color: #fff; }
+  .sg-btn.small     { font-size: 12px; padding: 7px 10px; border-radius: 8px; }
+  .sg-btn.large     { font-size: 16px; padding: 13px 20px; border-radius: 12px; }
+
+  /* Badges */
+  .sg-badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .sg-badge {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--robin-dim);
+    background: #fff;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .sg-badge.live     { background: var(--success);    color: #fff;    border-color: var(--success); }
+  .sg-badge.upcoming { background: var(--warning-bg); color: #7a4b00; border-color: #f3d1a4; }
+  .sg-badge.ghost-b  { background: #fff;              color: var(--muted); }
+
+  /* Session card */
+  .sg-session {
+    border: 1px solid var(--robin-dim);
+    border-radius: 14px;
+    padding: 14px;
+    background: #fff;
+    margin-bottom: 12px;
+  }
+  .sg-session.next {
+    background: linear-gradient(180deg, #fff, #effbff);
+    border-color: #95d7f0;
+  }
+  .sg-session-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; }
+  .sg-session-title { font-size: 19px; font-weight: 700; margin: 0 0 4px; }
+  .sg-session-meta  { font-size: 13px; color: var(--muted); margin: 0; }
+  .sg-session-desc  { font-size: 14px; color: var(--text); margin: 10px 0 12px; }
+
+  /* Notice bars */
+  .sg-notice {
+    border-left: 4px solid var(--robin);
+    background: var(--robin-faint);
+    border-radius: 0 10px 10px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .sg-notice.success { border-color: var(--success); background: var(--success-bg); }
+  .sg-notice.warning { border-color: var(--warning); background: var(--warning-bg); }
+  .sg-notice.danger  { border-color: var(--danger);  background: var(--danger-bg); }
+
+  /* Form elements */
+  .sg-input, .sg-textarea, .sg-select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--robin-dim);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 10px;
+  }
+  .sg-input:focus, .sg-textarea:focus { border-color: var(--robin); }
+  .sg-textarea { min-height: 80px; resize: vertical; }
+  .sg-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 5px;
+  }
+  .sg-form-block { margin-bottom: 12px; }
+
+  /* Admin login example */
+  .sg-admin-gate {
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 14px;
+    padding: 16px;
+    max-width: 360px;
+  }
+  .sg-admin-gate-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .sg-admin-gate-sub { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+
+  /* Two-col grid */
+  .sg-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .sg-three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* Do / Don't */
+  .sg-do { border-left: 4px solid var(--success); padding-left: 12px; margin-bottom: 8px; }
+  .sg-dont { border-left: 4px solid var(--danger); padding-left: 12px; margin-bottom: 8px; }
+  .sg-do-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--success); margin-bottom: 4px; }
+  .sg-dont-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--danger); margin-bottom: 4px; }
+
+  /* Spacing scale */
+  .sg-space-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px; margin-bottom: 12px; }
+  .sg-space-block { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .sg-space-bar { background: var(--robin); border-radius: 4px; width: 32px; }
+  .sg-space-val { font-family: 'Source Code Pro', monospace; font-size: 10px; color: var(--muted); }
+
+  /* Code snippet */
+  .sg-code {
+    background: #f4fafd;
+    border: 1px solid var(--robin-line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    color: var(--text);
+    overflow-x: auto;
+    margin-bottom: 12px;
+  }
+
+  /* Footer */
+  .sg-footer {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 16px;
+    text-align: left;
+    padding-left: 4px;
+  }
+
+  @media (max-width: 760px) {
+    .sg-two-col, .sg-three-col { grid-template-columns: 1fr; }
+    .sg-swatch-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  }
+</style>
+
+<div class="sg-shell">
+
+  <!-- Ticker -->
+  <div class="sg-ticker-wrap">
+    <div class="sg-ticker-inner">
+      <span class="sg-ticker-label">WBN Brand:</span>
+      Robin Blue &nbsp;&#9670;&nbsp; Arial &nbsp;&#9670;&nbsp; TrainingCast™ &nbsp;&#9670;&nbsp; WeatherCast™ &nbsp;&#9670;&nbsp; NewsCast™ &nbsp;&#9670;&nbsp; SpaceCast™ &nbsp;&#9670;&nbsp; WBN Style Guide v2.0
+    </div>
+  </div>
+
+  <!-- Masthead -->
+  <div class="sg-masthead">
+    <div class="sg-masthead-brand">WBN Global Inc.™</div>
+    <div class="sg-masthead-title">Style Guide v2.0</div>
+    <p class="sg-masthead-sub">Robin Blue · Arial · Source Code Pro &nbsp;·&nbsp; TrainingCast™ · WeatherCast™ · NewsCast™ · SpaceCast™</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="sg-tabs">
+    <button class="sg-tab active" onclick="sgTab('colours',this)">Colours</button>
+    <button class="sg-tab" onclick="sgTab('typography',this)">Typography</button>
+    <button class="sg-tab" onclick="sgTab('components',this)">Components</button>
+    <button class="sg-tab" onclick="sgTab('usage',this)">Usage</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ COLOURS -->
+  <div class="sg-section active" id="sg-colours">
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Primary Palette — Robin Blue</div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 16px;">The WBN colour system is anchored by Robin Blue — a clear, confident sky blue that reads as intelligent and accessible. All casts use this system consistently.</p>
+      <div class="sg-swatch-grid">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#59c2eb;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Blue</div><div class="sg-swatch-hex">#59c2eb</div><div class="sg-swatch-use">Primary accent, buttons, active states</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#2f8eb3;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Dark</div><div class="sg-swatch-hex">#2f8eb3</div><div class="sg-swatch-use">Hover states, ticker, borders</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#1a7aaa;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Deep</div><div class="sg-swatch-hex">#1a7aaa</div><div class="sg-swatch-use">Dark accents, pressed states</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#b7dfef;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Dim</div><div class="sg-swatch-hex">#b7dfef</div><div class="sg-swatch-use">Borders, dividers, light accents</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#eef9fe;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Faint</div><div class="sg-swatch-hex">#eef9fe</div><div class="sg-swatch-use">Badge backgrounds, hover fills</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#c8ecfb;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Robin Line</div><div class="sg-swatch-hex">#c8ecfb</div><div class="sg-swatch-use">Section rules, dividers</div></div></div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Background Gradient</div>
+      <div class="sg-swatch-grid">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#dff5ff;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">BG Top</div><div class="sg-swatch-hex">#dff5ff</div><div class="sg-swatch-use">Shell gradient start</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#c8ecfb;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">BG Bottom</div><div class="sg-swatch-hex">#c8ecfb</div><div class="sg-swatch-use">Shell gradient end</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#f8fdff;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Panel Tint</div><div class="sg-swatch-hex">#f8fdff</div><div class="sg-swatch-use">Panel gradient end</div></div></div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Neutrals</div>
+      <div class="sg-swatch-grid">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#123246;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Text</div><div class="sg-swatch-hex">#123246</div><div class="sg-swatch-use">Primary text, headings</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#426679;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Muted</div><div class="sg-swatch-hex">#426679</div><div class="sg-swatch-use">Labels, timestamps, secondary</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#ffffff; border:1px solid #ddd;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">White</div><div class="sg-swatch-hex">#ffffff</div><div class="sg-swatch-use">Cards, panels, forms</div></div></div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Status Colours</div>
+      <div class="sg-swatch-grid">
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#1f9d63;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Success</div><div class="sg-swatch-hex">#1f9d63</div><div class="sg-swatch-use">Live, confirmed, approved</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#e6a23c;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Warning</div><div class="sg-swatch-hex">#e6a23c</div><div class="sg-swatch-use">Upcoming, pending, caution</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#d9534f;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Danger</div><div class="sg-swatch-hex">#d9534f</div><div class="sg-swatch-use">Error, delete, alert</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#e8f7ee;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Success BG</div><div class="sg-swatch-hex">#e8f7ee</div><div class="sg-swatch-use">Live badge fill</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#fff5e8;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Warning BG</div><div class="sg-swatch-hex">#fff5e8</div><div class="sg-swatch-use">Upcoming badge fill</div></div></div>
+        <div class="sg-swatch"><div class="sg-swatch-color" style="background:#fdf0f0;"></div><div class="sg-swatch-info"><div class="sg-swatch-name">Danger BG</div><div class="sg-swatch-hex">#fdf0f0</div><div class="sg-swatch-use">Error badge fill</div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ TYPOGRAPHY -->
+  <div class="sg-section" id="sg-typography">
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Font System — 2+1 Stack</div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 16px;">WBN platforms use <strong>Arial</strong> as the primary UI and body font (universal, no load required) paired with <strong>Source Code Pro</strong> for monospaced metadata, and <strong>Oswald</strong> optionally for display headings where the broadcast aesthetic is needed.</p>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Primary UI Font — Arial</div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Heading / Bold — Arial 700 · 28px</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:28px;font-weight:700;color:var(--text);">Training Live – Online</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Sub-heading — Arial 700 · 19px</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:700;color:var(--text);">Publisher Training Session</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Body — Arial 400 · 14–15px · line-height 1.45</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;color:var(--text);line-height:1.45;">Get expert support in real time with WBN's Help Desk – Live Online Training. Whether you're a member, publisher, or new user, we're here to guide you every step of the way.</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Label / Badge — Arial 700 · 11–12px · uppercase</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">Upcoming Schedule &nbsp;·&nbsp; Sponsors &nbsp;·&nbsp; Admin Access</div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Monospace — Source Code Pro</div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Metadata / Timestamps — Source Code Pro 400 · 12–13px</div>
+        <div style="font-family:'Source Code Pro',monospace;font-size:13px;color:var(--muted);">Mon, Apr 7, 2026, 10:00 AM · Ends 11:00 AM · 60 min · Repeats weekly</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Ticker — Source Code Pro 700 · 14px</div>
+        <div style="font-family:'Source Code Pro',monospace;font-size:14px;font-weight:700;color:var(--text);">Welcome to WBN Training Live – Online.</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Hex / Version — Source Code Pro 500 · 11px</div>
+        <div style="font-family:'Source Code Pro',monospace;font-size:11px;color:var(--muted);">#59c2eb &nbsp;·&nbsp; v1.5 &nbsp;·&nbsp; 04-07-26 1:12 pm PST</div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Display Optional — Oswald (Broadcast Headings)</div>
+      <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">Use Oswald only where the broadcast/editorial aesthetic is required (e.g. NewsCast™ section headers, WarCast™ titles). For TrainingCast™ and support modules, Arial is the standard.</p>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Oswald 700 · 36px · Uppercase</div>
+        <div style="font-family:'Oswald',Arial,sans-serif;font-size:36px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text);">WBN Global Inc.™</div>
+      </div>
+      <div class="sg-type-specimen">
+        <div class="sg-type-label">Oswald 700 · 22px · Uppercase</div>
+        <div style="font-family:'Oswald',Arial,sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text);">Breaking News / SpaceCast™</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════════════════ COMPONENTS -->
+  <div class="sg-section" id="sg-components">
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Buttons</div>
+      <div class="sg-type-label" style="margin-bottom:8px;">Full range — border-radius: 10px · Arial Bold · Normal case</div>
+      <div class="sg-btn-row">
+        <button class="sg-btn primary">Primary</button>
+        <button class="sg-btn secondary">Secondary</button>
+        <button class="sg-btn ghost">Ghost</button>
+        <button class="sg-btn danger">Danger</button>
+        <button class="sg-btn success">Success</button>
+      </div>
+      <div class="sg-btn-row">
+        <button class="sg-btn primary small">Small</button>
+        <button class="sg-btn primary">Default</button>
+        <button class="sg-btn primary large">Large</button>
+      </div>
+      <div class="sg-btn-row">
+        <a class="sg-btn primary" href="#">Join Training</a>
+        <button class="sg-btn secondary small">Move Up</button>
+        <button class="sg-btn secondary small">Move Down</button>
+        <button class="sg-btn danger small">Delete</button>
+        <button class="sg-btn ghost small">Edit</button>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Badges &amp; Status Tags</div>
+      <div class="sg-badge-row">
+        <span class="sg-badge live">LIVE NOW</span>
+        <span class="sg-badge upcoming">UPCOMING</span>
+        <span class="sg-badge ghost-b">ONE-TIME</span>
+        <span class="sg-badge ghost-b">WEEKLY</span>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Session Cards</div>
+      <div class="sg-session next">
+        <div class="sg-session-top">
+          <div>
+            <div class="sg-session-title">Publisher Help Desk – Live Q&amp;A</div>
+            <div class="sg-session-meta">Mon, Apr 7, 2026, 10:00 AM · Ends 11:00 AM · 60 min · Repeats weekly</div>
+          </div>
+          <div class="sg-badge live">LIVE NOW</div>
+        </div>
+        <div class="sg-session-desc">Open training for publishers and new members. Bring your questions — our team is live and ready to help.</div>
+        <div><button class="sg-btn primary">Join Training</button></div>
+      </div>
+      <div class="sg-session">
+        <div class="sg-session-top">
+          <div>
+            <div class="sg-session-title">Member Onboarding Walkthrough</div>
+            <div class="sg-session-meta">Wed, Apr 9, 2026, 2:00 PM · Ends 3:00 PM · 60 min · One-time session</div>
+          </div>
+          <div class="sg-badge upcoming">UPCOMING</div>
+        </div>
+        <div class="sg-session-desc">Step-by-step walkthrough for new members joining the WBN platform.</div>
+        <div><button class="sg-btn primary">Join Training</button></div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Notice Bars</div>
+      <div class="sg-notice">ℹ Training sessions shown for the next 21 days. Past sessions are automatically removed.</div>
+      <div class="sg-notice success">✓ Session saved successfully — it will appear in the upcoming schedule.</div>
+      <div class="sg-notice warning">⚠ This session date is in the past. It may not appear in the public view.</div>
+      <div class="sg-notice danger">✕ Incorrect password. Please try again.</div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Form Elements</div>
+      <div class="sg-two-col">
+        <div>
+          <div class="sg-form-block">
+            <label class="sg-label">Training Title</label>
+            <input class="sg-input" placeholder="Example: Publisher Training Session" />
+          </div>
+          <div class="sg-form-block">
+            <label class="sg-label">Short Description</label>
+            <textarea class="sg-textarea" placeholder="Small description for the session"></textarea>
+          </div>
+          <div class="sg-form-block">
+            <label class="sg-label">Recurring Weekly?</label>
+            <select class="sg-select">
+              <option>No</option>
+              <option>Yes – Weekly</option>
+            </select>
+          </div>
+          <div><button class="sg-btn primary">Save Session</button>&nbsp;<button class="sg-btn secondary">Clear Form</button></div>
+        </div>
+        <div>
+          <div class="sg-admin-gate">
+            <div class="sg-admin-gate-title">Admin Access</div>
+            <div class="sg-admin-gate-sub">Private editing controls for the training desk.</div>
+            <label class="sg-label">Password</label>
+            <input class="sg-input" type="password" placeholder="Enter password" />
+            <button class="sg-btn primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Ticker / Scroll Bar</div>
+      <div class="sg-ticker-wrap" style="margin-bottom:0;">
+        <div class="sg-ticker-inner">
+          <span class="sg-ticker-label">Training Updates:</span>
+          Welcome to WBN Training Live – Online. &nbsp;&#9670;&nbsp; Next session: Publisher Help Desk — Monday 10:00 AM
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">CSS Variable Reference</div>
+      <div class="sg-code">--bg1: #dff5ff;          /* shell gradient top */
+--bg2: #c8ecfb;          /* shell gradient bottom */
+--panel: #ffffff;        /* panel surface */
+--border: #b7dfef;       /* robin dim — borders */
+--accent: #59c2eb;       /* robin blue — buttons, active */
+--accent-dark: #2f8eb3;  /* robin dark — hover */
+--text: #123246;         /* primary text */
+--muted: #426679;        /* secondary / labels */
+--soft: #eef9fe;         /* robin faint — hover fills */
+--danger: #d9534f;       /* delete / error */
+--success: #1f9d63;      /* live / approved */
+--warning: #e6a23c;      /* upcoming / caution */</div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ USAGE -->
+  <div class="sg-section" id="sg-usage">
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Do &amp; Don't</div>
+      <div class="sg-two-col">
+        <div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Use Robin Blue (#59c2eb) as the primary interactive accent — buttons, active states, borders.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Use Arial as the default UI and body font — it is universal and requires no external load.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Use Source Code Pro for timestamps, metadata, hex codes, ticker text, and version stamps.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Use border-radius: 10px on buttons and 14–18px on panels for a clean, modern broadcast feel.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Keep card and panel surfaces white (#ffffff) with the blue gradient for the shell/outer wrapper.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Use event delegation for dynamically rendered admin buttons — not inline onclick attributes.</div></div>
+          <div class="sg-do"><div class="sg-do-label">Do</div><div style="font-size:14px;">Wrap all widget JS in an IIFE (immediately invoked function expression) to avoid global scope conflicts.</div></div>
+        </div>
+        <div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't use inline onclick= handlers for dynamically rendered elements — they break in Ghost HTML blocks.</div></div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't use red as a primary brand colour — it is reserved for danger/delete states only.</div></div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't spread localStorage reads into multiple calls — batch related data under a single key where possible.</div></div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't mix font weights carelessly — headings/labels use 700, body uses 400–500 only.</div></div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't put body copy in Oswald — it is a display/heading font only, used sparingly.</div></div>
+          <div class="sg-dont"><div class="sg-dont-label">Don't</div><div style="font-size:14px;">Don't use dark/black backgrounds on the main page — the light gradient theme is the WBN standard.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Spacing Scale — Base-4</div>
+      <div class="sg-space-row">
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:4px;"></div><div class="sg-space-val">4px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:8px;"></div><div class="sg-space-val">8px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:12px;"></div><div class="sg-space-val">12px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:16px;"></div><div class="sg-space-val">16px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:20px;"></div><div class="sg-space-val">20px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:24px;"></div><div class="sg-space-val">24px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:28px;"></div><div class="sg-space-val">28px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:32px;"></div><div class="sg-space-val">32px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:40px;"></div><div class="sg-space-val">40px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:48px;"></div><div class="sg-space-val">48px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:60px;"></div><div class="sg-space-val">60px</div></div>
+        <div class="sg-space-block"><div class="sg-space-bar" style="height:80px;"></div><div class="sg-space-val">80px</div></div>
+      </div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Build Engine Checklist</div>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 12px;">Every widget deployed to a WBN platform must satisfy these requirements before going live.</p>
+      <div class="sg-notice success">✓ Fully self-contained — no bleed outside the wrapper div</div>
+      <div class="sg-notice success">✓ Ghost-compatible — clean HTML/CSS/JS, no framework dependencies</div>
+      <div class="sg-notice success">✓ Admin panel with working login and logout</div>
+      <div class="sg-notice success">✓ localStorage-backed with export/import (Download Data / Upload Data)</div>
+      <div class="sg-notice success">✓ Sponsor / Advertising widget included</div>
+      <div class="sg-notice success">✓ Version stamp and timestamp in footer</div>
+      <div class="sg-notice success">✓ Responsive — single-column on mobile</div>
+      <div class="sg-notice success">✓ All JS wrapped in IIFE — no global namespace pollution</div>
+      <div class="sg-notice success">✓ Dynamic buttons use event delegation — no inline onclick=</div>
+    </div>
+
+    <div class="sg-panel">
+      <div class="sg-panel-title">Version Stamp Format</div>
+      <div class="sg-code">WBN TrainingCast™ v1.5 | 04-07-26 1:12 pm PST</div>
+      <p style="font-size:13px;color:var(--muted);margin:0;">Every widget footer must include the widget name, version, and a date/time stamp. Use Source Code Pro or Arial at 11–12px, color: var(--muted).</p>
+    </div>
+
+  </div>
+
+  <div class="sg-footer">WBN Global Inc.™ Style Guide v2.0 &nbsp;·&nbsp; TrainingCast™ · WeatherCast™ · NewsCast™ · SpaceCast™ &nbsp;·&nbsp; 04-07-26</div>
+</div>
+
+<script>
+(function() {
+  function sgTab(id, btn) {
+    var sections = document.querySelectorAll('#wbn-styleguide .sg-section');
+    var tabs     = document.querySelectorAll('#wbn-styleguide .sg-tab');
+    sections.forEach(function(s) { s.classList.remove('active'); });
+    tabs.forEach(function(t)     { t.classList.remove('active'); });
+    var target = document.getElementById('sg-' + id);
+    if (target) target.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+  window.sgTab = sgTab;
+})();
+</script>
+</div>

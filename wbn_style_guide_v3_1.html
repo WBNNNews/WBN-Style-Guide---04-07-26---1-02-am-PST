@@ -1,0 +1,877 @@
+<!-- WBN Style Guide v3.1 | DealStream™ Aligned | Unified Brand & Component Standard -->
+<div id="wbn-sg31">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+  #wbn-sg31 {
+    --robin:        #59c2eb;
+    --robin-dark:   #1f8db8;
+    --robin-deep:   #1a7aaa;
+    --robin-dim:    #b7dfef;
+    --robin-faint:  #eef9fe;
+    --robin-line:   #c8ecfb;
+    --bg1:          #dff5ff;
+    --bg2:          #c8ecfb;
+    --panel1:       #ffffff;
+    --panel2:       #eaf8fe;
+    --text:         #123246;
+    --muted:        #426679;
+    --success:      #13795b;
+    --warning:      #9a6700;
+    --danger:       #a61b1b;
+    --success-bg:   #e8f7ee;
+    --warning-bg:   #fff5e8;
+    --danger-bg:    #fdf0f0;
+    --shadow:       0 10px 30px rgba(18,50,70,.08);
+    --radius:       18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  #wbn-sg31 * { box-sizing: border-box; }
+
+  /* ── Shell ── */
+  .sg31-shell {
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    border: 1px solid var(--robin-dim);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ── Masthead ── */
+  .sg31-masthead {
+    background: linear-gradient(180deg, var(--panel1), var(--panel2));
+    border: 1px solid var(--robin-dim);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .sg31-wordmark {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--robin-dark);
+    margin-bottom: 8px;
+  }
+  .sg31-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin: 0 0 6px;
+  }
+  .sg31-sub { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* ── Ticker ── */
+  .sg31-ticker-wrap {
+    background: rgba(255,255,255,.85);
+    border: 1px solid var(--robin-dim);
+    border-radius: 16px;
+    padding: 12px 0;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .sg31-ticker-inner {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: sg31tick 32s linear infinite;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Source Code Pro', monospace;
+    color: var(--text);
+  }
+  .sg31-ticker-label { color: var(--robin-dark); margin-right: 10px; }
+  @keyframes sg31tick { 0%{transform:translateX(0)} 100%{transform:translateX(-100%)} }
+
+  /* ── Tabs ── */
+  .sg31-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 16px;
+    padding: 7px;
+    margin-bottom: 14px;
+  }
+  .sg31-tab {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    transition: .15s;
+  }
+  .sg31-tab:hover  { background: var(--robin-faint); color: var(--text); }
+  .sg31-tab.active { background: var(--robin); color: #fff; }
+
+  /* ── Sections ── */
+  .sg31-sec { display: none; }
+  .sg31-sec.active { display: block; }
+
+  /* ── Panel ── */
+  .sg31-panel {
+    background: linear-gradient(180deg, var(--panel1), var(--panel2));
+    border: 1px solid var(--robin-dim);
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .sg31-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--robin-dim);
+    background: rgba(255,255,255,.58);
+    flex-wrap: wrap;
+  }
+  .sg31-panel-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--robin-dark);
+    margin: 0;
+  }
+  .sg31-panel-body { padding: 18px; }
+
+  /* ── Status badge (panel header) ── */
+  .sg31-status {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid var(--robin-dim);
+    background: #fff;
+    color: var(--robin-dark);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  /* ── Swatches ── */
+  .sg31-swatches { display: grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); gap: 10px; }
+  .sg31-swatch { border: 1px solid var(--robin-dim); border-radius: 14px; overflow: hidden; background: #fff; }
+  .sg31-swatch-bar  { height: 54px; width: 100%; }
+  .sg31-swatch-info { padding: 8px 10px; }
+  .sg31-swatch-name { font-family: 'Oswald', Arial, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text); margin-bottom: 1px; }
+  .sg31-swatch-hex  { font-family: 'Source Code Pro', monospace; font-size: 11px; color: var(--muted); }
+  .sg31-swatch-use  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* ── Type specimens ── */
+  .sg31-specimen { border: 1px solid var(--robin-line); border-radius: 14px; padding: 14px; margin-bottom: 10px; background: #fff; }
+  .sg31-spec-label { font-family: 'Source Code Pro', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+
+  /* ── Buttons ── */
+  .sg31-btn-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .sg31-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: .15s;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+  .sg31-btn:hover { filter: brightness(.97); }
+  .sg31-btn.primary   { background: var(--robin);      color: #fff; }
+  .sg31-btn.secondary { background: #fff;               color: var(--text); border: 1px solid var(--robin-dim); }
+  .sg31-btn.dark      { background: var(--robin-dark);  color: #fff; }
+  .sg31-btn.success   { background: var(--success);     color: #fff; }
+  .sg31-btn.warning   { background: var(--warning);     color: #fff; }
+  .sg31-btn.danger    { background: var(--danger);      color: #fff; }
+  .sg31-btn.small     { font-size: 12px; padding: 7px 10px; border-radius: 10px; }
+  .sg31-btn.large     { font-size: 16px; padding: 13px 20px; border-radius: 14px; }
+
+  /* ── Pills ── */
+  .sg31-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.75);
+    border: 1px solid var(--robin-dim);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  /* ── Chips (inline metadata tags) ── */
+  .sg31-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .sg31-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--robin-dim);
+    background: #f8fdff;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  /* ── Badges (status) ── */
+  .sg31-badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .sg31-badge {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    padding: 6px 10px; border-radius: 999px;
+    border: 1px solid var(--robin-dim);
+    background: #fff; color: var(--robin-dark);
+    white-space: nowrap;
+  }
+  .sg31-badge.live    { background: var(--success);    color: #fff;    border-color: var(--success); }
+  .sg31-badge.upcoming{ background: var(--warning-bg); color: var(--warning); border-color: #f3d1a4; }
+  .sg31-badge.success { background: var(--success-bg); color: var(--success); border-color: #a7dfc3; }
+  .sg31-badge.warning { background: var(--warning-bg); color: var(--warning); border-color: #f3d1a4; }
+  .sg31-badge.danger  { background: var(--danger-bg);  color: var(--danger);  border-color: #f5b8b8; }
+
+  /* ── Session / deal cards ── */
+  .sg31-card {
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: grid;
+    gap: 10px;
+  }
+  .sg31-card.next { background: linear-gradient(180deg,#fff,#eaf8fe); border-color: #95d7f0; }
+  .sg31-card:last-child { margin-bottom: 0; }
+  .sg31-card-top   { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  .sg31-card-title { font-size: 18px; font-weight: 700; margin: 0 0 4px; }
+  .sg31-card-meta  { font-size: 12px; color: var(--muted); margin: 0; font-family: 'Source Code Pro', monospace; }
+  .sg31-card-desc  { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.45; }
+  .sg31-card-footer{ display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .sg31-commission { font-weight: 800; color: var(--success); font-size: 16px; }
+
+  /* ── Item (partner / tool list) ── */
+  .sg31-item {
+    background: #fff;
+    border: 1px solid var(--robin-dim);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .sg31-item:last-child { margin-bottom: 0; }
+  .sg31-item strong { display: block; margin-bottom: 5px; }
+  .sg31-item-note { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+  /* ── Stat blocks ── */
+  .sg31-stats { display: grid; grid-template-columns: repeat(auto-fill,minmax(120px,1fr)); gap: 12px; margin-bottom: 10px; }
+  .sg31-stat { background: #fff; border: 1px solid var(--robin-dim); border-top: 3px solid var(--robin); border-radius: 16px; padding: 14px; text-align: center; }
+  .sg31-stat-num { display: block; font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 5px; line-height: 1; }
+  .sg31-stat-label { font-family: 'Oswald', Arial, sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+  /* ── Flow steps ── */
+  .sg31-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 12px; }
+  .sg31-flow-step { background: #fff; border: 1px solid var(--robin-dim); border-radius: 16px; padding: 14px 12px; text-align: center; font-weight: 700; font-size: 14px; }
+
+  /* ── Section header ── */
+  .sg31-section-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-left: 4px solid var(--robin); padding-left: 12px; margin-bottom: 12px; }
+  .sg31-section-header-title { font-family: 'Oswald', Arial, sans-serif; font-size: 18px; font-weight: 700; margin: 0; color: var(--text); }
+  .sg31-section-header-stamp { font-family: 'Source Code Pro', monospace; font-size: 11px; color: var(--muted); background: #fff; border: 1px solid var(--robin-dim); padding: 4px 8px; border-radius: 8px; }
+
+  /* ── Notice bars ── */
+  .sg31-notice { border-left: 4px solid var(--robin); background: var(--robin-faint); border-radius: 0 12px 12px 0; padding: 10px 14px; font-size: 13px; color: var(--text); margin-bottom: 8px; }
+  .sg31-notice.success { border-color: var(--success); background: var(--success-bg); color: var(--success); }
+  .sg31-notice.warning { border-color: var(--warning); background: var(--warning-bg); color: var(--warning); }
+  .sg31-notice.danger  { border-color: var(--danger);  background: var(--danger-bg);  color: var(--danger); }
+
+  /* ── Locked overlay ── */
+  .sg31-locked-demo {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .sg31-locked-overlay {
+    background: rgba(223,245,255,.88);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--robin-dim);
+    margin-bottom: 10px;
+  }
+  .sg31-locked-title { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  .sg31-locked-sub   { font-size: 14px; color: var(--muted); margin: 0 0 14px; max-width: 340px; line-height: 1.45; }
+
+  /* ── Forms ── */
+  .sg31-input, .sg31-textarea, .sg31-select {
+    width: 100%; min-height: 46px; padding: 12px 14px;
+    border: 1px solid var(--robin-dim); border-radius: 12px;
+    background: #fff; color: var(--text);
+    font-family: Arial, Helvetica, sans-serif; font-size: 14px;
+    outline: none; margin-bottom: 10px;
+  }
+  .sg31-input:focus, .sg31-textarea:focus { border-color: var(--robin); }
+  .sg31-textarea { min-height: 90px; resize: vertical; }
+  .sg31-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: block; margin-bottom: 4px; }
+  .sg31-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* ── Code block ── */
+  .sg31-code { background: #f4fafd; border: 1px solid var(--robin-line); border-radius: 12px; padding: 14px; font-family: 'Source Code Pro', monospace; font-size: 12px; color: var(--text); overflow-x: auto; margin-bottom: 10px; line-height: 1.7; }
+
+  /* ── Do / Don't ── */
+  .sg31-do   { border-left: 4px solid var(--success); padding-left: 12px; margin-bottom: 8px; }
+  .sg31-dont { border-left: 4px solid var(--danger);  padding-left: 12px; margin-bottom: 8px; }
+  .sg31-do-label   { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--success); margin-bottom: 4px; letter-spacing: .06em; }
+  .sg31-dont-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--danger);  margin-bottom: 4px; letter-spacing: .06em; }
+
+  /* ── Rule callout ── */
+  .sg31-rule { background: #fff; border: 1px solid var(--robin-dim); border-left: 4px solid var(--robin-dark); border-radius: 0 14px 14px 0; padding: 12px 14px; margin-bottom: 10px; }
+  .sg31-rule-title { font-family: 'Oswald', Arial, sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--robin-dark); margin: 0 0 4px; }
+  .sg31-rule-body  { font-size: 13px; color: var(--text); margin: 0; line-height: 1.5; }
+
+  /* ── Spacing ── */
+  .sg31-space-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 6px; margin-bottom: 10px; }
+  .sg31-space-block { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .sg31-space-bar { background: var(--robin); border-radius: 3px; width: 28px; }
+  .sg31-space-val { font-family: 'Source Code Pro', monospace; font-size: 10px; color: var(--muted); }
+
+  /* ── Divider ── */
+  .sg31-divider { height: 1px; background: linear-gradient(90deg,transparent,var(--robin-dim),transparent); margin: 14px 0; }
+
+  /* ── Footer ── */
+  .sg31-footer { font-family: 'Source Code Pro', monospace; font-size: 11px; color: var(--muted); margin-top: 14px; padding: 0 4px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width:700px) {
+    .sg31-two-col { grid-template-columns: 1fr; }
+    .sg31-flow    { grid-template-columns: repeat(2,1fr); }
+    .sg31-swatches { grid-template-columns: repeat(auto-fill,minmax(120px,1fr)); }
+  }
+</style>
+
+<div class="sg31-shell">
+
+  <!-- Masthead -->
+  <div class="sg31-masthead">
+    <div class="sg31-wordmark">WBN Global Inc.™</div>
+    <div class="sg31-title">Style Guide v3.1</div>
+    <p class="sg31-sub">Robin Blue &nbsp;·&nbsp; Arial &nbsp;·&nbsp; Source Code Pro &nbsp;·&nbsp; Oswald (display) &nbsp;·&nbsp; DealStream™ · TrainingCast™ · WeatherCast™ · NewsCast™ · SpaceCast™</p>
+  </div>
+
+  <!-- Ticker -->
+  <div class="sg31-ticker-wrap">
+    <div class="sg31-ticker-inner">
+      <span class="sg31-ticker-label">WBN Style Guide v3.1:</span>
+      DealStream™ aligned &nbsp;◆&nbsp; Robin Blue confirmed &nbsp;◆&nbsp; Rounded edges &nbsp;◆&nbsp; Contrast-safe status colours &nbsp;◆&nbsp; Arial primary &nbsp;◆&nbsp; Oswald display &nbsp;◆&nbsp; IIFE standard &nbsp;◆&nbsp; Ghost-ready
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="sg31-tabs" id="sg31Tabs">
+    <button class="sg31-tab active" data-sec="colours">Colours</button>
+    <button class="sg31-tab" data-sec="typography">Typography</button>
+    <button class="sg31-tab" data-sec="components">Components</button>
+    <button class="sg31-tab" data-sec="patterns">Patterns</button>
+    <button class="sg31-tab" data-sec="rules">Build Rules</button>
+  </div>
+
+  <!-- ══════════ COLOURS -->
+  <div class="sg31-sec active" id="sg31-colours">
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header">
+        <div class="sg31-panel-title">Primary Palette — Robin Blue</div>
+        <div class="sg31-status">Confirmed v3.1</div>
+      </div>
+      <div class="sg31-panel-body">
+        <p style="font-size:13px;color:var(--muted);margin:0 0 14px;">Robin Blue is the WBN anchor colour — consistent across all casts and modules. <code style="font-family:'Source Code Pro',monospace;font-size:11px;">--robin-dark</code> updated to <code style="font-family:'Source Code Pro',monospace;font-size:11px;">#1f8db8</code> in v3.1 for richer hover contrast.</p>
+        <div class="sg31-swatches">
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#59c2eb"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Blue</div><div class="sg31-swatch-hex">#59c2eb</div><div class="sg31-swatch-use">Buttons, active, accent</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#1f8db8"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Dark</div><div class="sg31-swatch-hex">#1f8db8</div><div class="sg31-swatch-use">Hover, labels, status text ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#1a7aaa"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Deep</div><div class="sg31-swatch-hex">#1a7aaa</div><div class="sg31-swatch-use">Pressed states, rule titles</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#b7dfef"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Dim</div><div class="sg31-swatch-hex">#b7dfef</div><div class="sg31-swatch-use">Borders, dividers</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#eef9fe"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Faint</div><div class="sg31-swatch-hex">#eef9fe</div><div class="sg31-swatch-use">Hover fills, notice BG</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#c8ecfb"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Robin Line</div><div class="sg31-swatch-hex">#c8ecfb</div><div class="sg31-swatch-use">Section rules, panel borders</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header">
+        <div class="sg31-panel-title">Shell &amp; Panel Surfaces</div>
+        <div class="sg31-status">v3.1</div>
+      </div>
+      <div class="sg31-panel-body">
+        <div class="sg31-swatches">
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#dff5ff"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">BG Top</div><div class="sg31-swatch-hex">#dff5ff</div><div class="sg31-swatch-use">Shell gradient start</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#c8ecfb"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">BG Bottom</div><div class="sg31-swatch-hex">#c8ecfb</div><div class="sg31-swatch-use">Shell gradient end</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#ffffff; border:1px solid #ddd"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Panel 1</div><div class="sg31-swatch-hex">#ffffff</div><div class="sg31-swatch-use">Panel gradient start</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#eaf8fe"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Panel 2</div><div class="sg31-swatch-hex">#eaf8fe</div><div class="sg31-swatch-use">Panel gradient end ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:rgba(255,255,255,.58); border:1px solid #ddd"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Header Frost</div><div class="sg31-swatch-hex">rgba(255,255,255,.58)</div><div class="sg31-swatch-use">Panel header background ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#f8fdff"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Chip BG</div><div class="sg31-swatch-hex">#f8fdff</div><div class="sg31-swatch-use">Chip / tag background</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header">
+        <div class="sg31-panel-title">Neutrals</div>
+        <div class="sg31-status">Unchanged</div>
+      </div>
+      <div class="sg31-panel-body">
+        <div class="sg31-swatches">
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#123246"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Text</div><div class="sg31-swatch-hex">#123246</div><div class="sg31-swatch-use">Primary text, headings</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#426679"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Muted</div><div class="sg31-swatch-hex">#426679</div><div class="sg31-swatch-use">Labels, meta, secondary</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#ffffff; border:1px solid #ddd"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">White</div><div class="sg31-swatch-hex">#ffffff</div><div class="sg31-swatch-use">Cards, panels, forms</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header">
+        <div class="sg31-panel-title">Status Colours — Contrast Safe</div>
+        <div class="sg31-status">Updated v3.1</div>
+      </div>
+      <div class="sg31-panel-body">
+        <p style="font-size:13px;color:var(--muted);margin:0 0 14px;">All three status colours darkened in v3.1 to be text-safe on white backgrounds. Use the colour directly as text or as a fill — not both simultaneously with light text unless on a dark fill.</p>
+        <div class="sg31-swatches">
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#13795b"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Success</div><div class="sg31-swatch-hex">#13795b</div><div class="sg31-swatch-use">Live, approved, earnings ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#9a6700"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Warning</div><div class="sg31-swatch-hex">#9a6700</div><div class="sg31-swatch-use">Pending, caution ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#a61b1b"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Danger</div><div class="sg31-swatch-hex">#a61b1b</div><div class="sg31-swatch-use">Error, delete, alert ↑v3.1</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#e8f7ee"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Success BG</div><div class="sg31-swatch-hex">#e8f7ee</div><div class="sg31-swatch-use">Badge fill — success</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#fff5e8"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Warning BG</div><div class="sg31-swatch-hex">#fff5e8</div><div class="sg31-swatch-use">Badge fill — warning</div></div></div>
+          <div class="sg31-swatch"><div class="sg31-swatch-bar" style="background:#fdf0f0"></div><div class="sg31-swatch-info"><div class="sg31-swatch-name">Danger BG</div><div class="sg31-swatch-hex">#fdf0f0</div><div class="sg31-swatch-use">Badge fill — danger</div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════ TYPOGRAPHY -->
+  <div class="sg31-sec" id="sg31-typography">
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Font Stack — v3.1 Standard</div><div class="sg31-status">Unchanged</div></div>
+      <div class="sg31-panel-body">
+        <p style="font-size:13px;color:var(--muted);margin:0;"><strong>Arial</strong> — primary UI and body font. Universal, no load required. <strong>Source Code Pro</strong> — monospaced metadata, tickers, timestamps, version stamps, code references. <strong>Oswald</strong> — display headings only: cast mastheads, section headers in editorial casts (NewsCast™, WarCast™, SpaceCast™). Libre Franklin retired in v3.0.</p>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Arial — Primary UI &amp; Body</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-specimen"><div class="sg31-spec-label">Main heading — Arial 700 · 34px · letter-spacing -.03em</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:34px;font-weight:700;letter-spacing:-.03em;color:var(--text);">WBN DealStream™</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Sub-heading — Arial 700 · 18–20px</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;color:var(--text);">Active Deals You Can Earn From</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Tagline — Arial 700 · 17px · color: robin-dark</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;color:var(--robin-dark);">The Relationship Monetization Engine</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Body — Arial 400 · 14–15px · line-height 1.45–1.55 · color: muted</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:var(--muted);line-height:1.55;">Public visitors can view opportunity highlights. Approved members can unlock full details, sales tools, and earning access.</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Label — Arial 700 · 11px · uppercase · letter-spacing .05em</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);">Commission &nbsp;·&nbsp; Category &nbsp;·&nbsp; Visibility &nbsp;·&nbsp; Partner</div></div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Source Code Pro — Monospace</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-specimen"><div class="sg31-spec-label">Ticker — Source Code Pro 700 · 14px</div><div style="font-family:'Source Code Pro',monospace;font-size:14px;font-weight:700;color:var(--text);">WBN DealStream™ Live &nbsp;◆&nbsp; Active Deals You Can Earn From</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Metadata / timestamps — Source Code Pro 400 · 12px</div><div style="font-family:'Source Code Pro',monospace;font-size:12px;color:var(--muted);">Mon, Apr 7, 2026 · 10:00 AM · 60 min · Repeats weekly</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Version stamp — Source Code Pro 400 · 11–12px</div><div style="font-family:'Source Code Pro',monospace;font-size:11px;color:var(--muted);">WBN DealStream™ v1.0 &nbsp;|&nbsp; 04-09-26 12:00 pm</div></div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Oswald — Display / Headings (Selective)</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-specimen"><div class="sg31-spec-label">Cast masthead — Oswald 700 · 32px · uppercase</div><div style="font-family:'Oswald',Arial,sans-serif;font-size:32px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text);">WBN Global Inc.™</div></div>
+        <div class="sg31-specimen"><div class="sg31-spec-label">Panel label — Oswald 700 · 12px · uppercase · letter-spacing .12em · color: robin-dark</div><div style="font-family:'Oswald',Arial,sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--robin-dark);">Active Deals &nbsp;·&nbsp; Opportunity Partners &nbsp;·&nbsp; Sales Tools</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════ COMPONENTS -->
+  <div class="sg31-sec" id="sg31-components">
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Buttons</div><div class="sg31-status">border-radius: 12px</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-btn-row">
+          <button class="sg31-btn primary">Primary</button>
+          <button class="sg31-btn dark">Dark</button>
+          <button class="sg31-btn secondary">Secondary</button>
+          <button class="sg31-btn success">Success</button>
+          <button class="sg31-btn warning">Warning</button>
+          <button class="sg31-btn danger">Danger</button>
+        </div>
+        <div class="sg31-btn-row">
+          <button class="sg31-btn primary small">Small</button>
+          <button class="sg31-btn primary">Default</button>
+          <button class="sg31-btn primary large">Large</button>
+        </div>
+        <div class="sg31-btn-row">
+          <button class="sg31-btn primary">Join Training</button>
+          <button class="sg31-btn dark">Admin</button>
+          <button class="sg31-btn secondary">Member Access</button>
+          <button class="sg31-btn secondary small">Edit</button>
+          <button class="sg31-btn danger small">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Pills &amp; Chips</div><div class="sg31-status">New in v3.1</div></div>
+      <div class="sg31-panel-body">
+        <p style="font-size:13px;color:var(--muted);margin:0 0 12px;"><strong>Pills</strong> are used in the topbar / header for status indicators. <strong>Chips</strong> are inline metadata tags on cards — partner name, category, visibility, tools.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <div class="sg31-pill">Public Viewer: Live</div>
+          <div class="sg31-pill">Member Access: Locked</div>
+          <div class="sg31-pill">Showing next 21 days</div>
+        </div>
+        <div class="sg31-chip-row">
+          <span class="sg31-chip">Impresario Partners</span>
+          <span class="sg31-chip">Consulting</span>
+          <span class="sg31-chip">Public Highlight</span>
+          <span class="sg31-chip">Intro Script</span>
+          <span class="sg31-chip">Partner PDF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Status Badges</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-badge-row">
+          <span class="sg31-badge live">Live Now</span>
+          <span class="sg31-badge upcoming">Upcoming</span>
+          <span class="sg31-badge success">Approved</span>
+          <span class="sg31-badge warning">Pending</span>
+          <span class="sg31-badge danger">Alert</span>
+          <span class="sg31-badge">Public View</span>
+          <span class="sg31-badge">Members Only</span>
+          <span class="sg31-badge">Supply Side</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Deal / Session Cards</div><div class="sg31-status">border-radius: 16px</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-card next">
+          <div class="sg31-card-top">
+            <div>
+              <div class="sg31-card-title">Impresario Consulting Contracts</div>
+              <div class="sg31-card-meta">Impresario Partners · Consulting · Public Highlight</div>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="sg31-badge live">Live</span>
+            </div>
+          </div>
+          <div class="sg31-card-desc">Introduce qualified companies seeking consulting, growth strategy, AI integration, or operational support. Revenue share available on closed contracts.</div>
+          <div class="sg31-card-footer">
+            <div class="sg31-commission">10% Commission</div>
+            <div class="sg31-chip-row" style="margin:0;">
+              <span class="sg31-chip">Intro Script</span>
+              <span class="sg31-chip">Partner PDF</span>
+              <span class="sg31-chip">Booking Link</span>
+            </div>
+          </div>
+        </div>
+        <div class="sg31-card">
+          <div class="sg31-card-top">
+            <div>
+              <div class="sg31-card-title">Publisher Help Desk – Live Q&amp;A</div>
+              <div class="sg31-card-meta">Mon, Apr 7, 2026, 10:00 AM · 60 min · Repeats weekly</div>
+            </div>
+            <span class="sg31-badge upcoming">Upcoming</span>
+          </div>
+          <div class="sg31-card-desc">Open training for publishers and new members. Bring your questions — our team is live and ready to help.</div>
+          <div><button class="sg31-btn primary small">Join Training</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Stat Blocks</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-stats">
+          <div class="sg31-stat"><span class="sg31-stat-num">4</span><span class="sg31-stat-label">Active Deals</span></div>
+          <div class="sg31-stat"><span class="sg31-stat-num">3</span><span class="sg31-stat-label">Partners</span></div>
+          <div class="sg31-stat"><span class="sg31-stat-num">2</span><span class="sg31-stat-label">Affiliate Offers</span></div>
+          <div class="sg31-stat"><span class="sg31-stat-num">4</span><span class="sg31-stat-label">Sales Assets</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Flow Steps</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-flow">
+          <div class="sg31-flow-step">Connect</div>
+          <div class="sg31-flow-step">Introduce</div>
+          <div class="sg31-flow-step">Close</div>
+          <div class="sg31-flow-step">Earn</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Item Cards (Partners / Tools)</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-item"><strong>Impresario Partners</strong><div class="sg31-item-note">Pays commissions on qualified consulting opportunities and strategic business contracts.</div></div>
+        <div class="sg31-item"><strong>Intro Scripts</strong><div class="sg31-item-note">Use ready-made conversation starters and short scripts to open the relationship and qualify the opportunity.</div></div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Locked Overlay</div><div class="sg31-status">New in v3.1</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-locked-overlay">
+          <div class="sg31-locked-title">Member Access Locked</div>
+          <p class="sg31-locked-sub">Unlock full deal details, commission tracking, sales scripts, links, and partner access.</p>
+          <button class="sg31-btn primary">Enter Member Password</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Notice Bars</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-notice">ℹ Training sessions shown for the next 21 days. Past sessions are automatically removed.</div>
+        <div class="sg31-notice success">✓ Deal added successfully — it will appear in the active deals list.</div>
+        <div class="sg31-notice warning">⚠ This session date is in the past and may not appear in the public view.</div>
+        <div class="sg31-notice danger">✕ Incorrect password. Please try again.</div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Form Elements</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-two-col">
+          <div>
+            <label class="sg31-label">Deal Title</label>
+            <input class="sg31-input" placeholder="Example: Consulting Contract Referral" />
+            <label class="sg31-label">Description</label>
+            <textarea class="sg31-textarea" placeholder="Short deal description"></textarea>
+            <div style="display:flex;gap:8px;">
+              <button class="sg31-btn success">Add Deal</button>
+              <button class="sg31-btn warning">Reset Demo</button>
+            </div>
+          </div>
+          <div>
+            <label class="sg31-label">Admin Password</label>
+            <input class="sg31-input" type="password" placeholder="Enter admin password" />
+            <div style="display:flex;gap:8px;">
+              <button class="sg31-btn dark">Log In</button>
+              <button class="sg31-btn secondary">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════ PATTERNS -->
+  <div class="sg31-sec" id="sg31-patterns">
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">CSS Variable Reference — v3.1</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-code">/* Robin Blue Palette */
+--robin:       #59c2eb;   /* primary accent, buttons */
+--robin-dark:  #1f8db8;   /* hover, labels, status text ↑v3.1 */
+--robin-deep:  #1a7aaa;   /* pressed, rule titles */
+--robin-dim:   #b7dfef;   /* borders, dividers */
+--robin-faint: #eef9fe;   /* hover fills, notice BG */
+--robin-line:  #c8ecfb;   /* section rules */
+
+/* Shell & Panels */
+--bg1:    #dff5ff;         /* shell gradient top */
+--bg2:    #c8ecfb;         /* shell gradient bottom */
+--panel1: #ffffff;         /* panel gradient start */
+--panel2: #eaf8fe;         /* panel gradient end ↑v3.1 */
+
+/* Neutrals */
+--text:   #123246;
+--muted:  #426679;
+
+/* Status — contrast-safe on white ↑v3.1 */
+--success:    #13795b;
+--warning:    #9a6700;
+--danger:     #a61b1b;
+--success-bg: #e8f7ee;
+--warning-bg: #fff5e8;
+--danger-bg:  #fdf0f0;
+
+/* Global */
+--shadow: 0 10px 30px rgba(18,50,70,.08);
+--radius: 18px;</div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Border Radius Scale — v3.1</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-code">Outer shell:        border-radius: 24px
+Panels:             border-radius: 18px  (--radius)
+Cards / sessions:   border-radius: 16px
+Item cards:         border-radius: 14px
+Buttons (default):  border-radius: 12px
+Inputs / selects:   border-radius: 12px
+Buttons (small):    border-radius: 10px
+Buttons (large):    border-radius: 14px
+Badges / pills:     border-radius: 999px
+Chips:              border-radius: 999px</div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Shell &amp; Panel Pattern</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-code">/* Outer shell */
+background: linear-gradient(180deg, #dff5ff, #c8ecfb);
+border: 1px solid #b7dfef;
+border-radius: 24px;
+box-shadow: 0 10px 30px rgba(18,50,70,.08);
+
+/* Panel */
+background: linear-gradient(180deg, #ffffff, #eaf8fe);
+border: 1px solid #b7dfef;
+border-radius: 18px;  /* --radius */
+overflow: hidden;
+
+/* Panel header (frosted) */
+background: rgba(255,255,255,.58);
+border-bottom: 1px solid #b7dfef;
+padding: 14px 18px;</div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Spacing Scale — Base-4</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-space-row">
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:4px"></div><div class="sg31-space-val">4</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:8px"></div><div class="sg31-space-val">8</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:10px"></div><div class="sg31-space-val">10</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:12px"></div><div class="sg31-space-val">12</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:14px"></div><div class="sg31-space-val">14</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:16px"></div><div class="sg31-space-val">16</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:18px"></div><div class="sg31-space-val">18</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:20px"></div><div class="sg31-space-val">20</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:22px"></div><div class="sg31-space-val">22</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:24px"></div><div class="sg31-space-val">24</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:32px"></div><div class="sg31-space-val">32</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:40px"></div><div class="sg31-space-val">40</div></div>
+          <div class="sg31-space-block"><div class="sg31-space-bar" style="height:48px"></div><div class="sg31-space-val">48</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════ BUILD RULES -->
+  <div class="sg31-sec" id="sg31-rules">
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Ghost Compatibility Rules</div><div class="sg31-status">Mandatory</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 1 — IIFE Wrapping</div><div class="sg31-rule-body">All widget JS wrapped in <code style="font-family:'Source Code Pro',monospace;font-size:12px;background:var(--robin-faint);padding:2px 5px;border-radius:4px;">(function(){ 'use strict'; ... })();</code> — prevents global scope collisions between widgets on the same Ghost page.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 2 — No Inline onclick=</div><div class="sg31-rule-body">Never use inline onclick= handlers. Ghost's CSP blocks them silently. All binding via addEventListener. Dynamic lists use event delegation on the parent container.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 3 — Self-Contained</div><div class="sg31-rule-body">Every widget is fully self-contained within its wrapper div. No bleed, no shared CSS or JS. Copy-paste deployable into any Ghost HTML block.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 4 — localStorage Persistence</div><div class="sg31-rule-body">All editable data saved to localStorage. Always wrap read/write in try/catch. Provide Download Data (export JSON) and Upload Data (import JSON) in admin.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 5 — Admin Access Pattern</div><div class="sg31-rule-body">Password gate on all admin panels. Login/logout state to localStorage. Admin hidden by default. Enter key via keydown listener. Password as plain constant — change per deployment.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 6 — Sponsor / Advertising Widget</div><div class="sg31-rule-body">Every platform widget includes a sponsor section. Default: generic "Sponsor" buttons. Admin-editable, persisted to localStorage.</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 7 — Version Stamp</div><div class="sg31-rule-body">Footer: <code style="font-family:'Source Code Pro',monospace;font-size:12px;background:var(--robin-faint);padding:2px 5px;border-radius:4px;">WBN WidgetName™ v1.0 | MM-DD-YY H:MM pm PST</code> — Source Code Pro · 11–12px · color: var(--muted).</div></div>
+        <div class="sg31-rule"><div class="sg31-rule-title">Rule 8 — Responsive</div><div class="sg31-rule-body">All widgets single-column on mobile. Grid layouts collapse at max-width: 1080px (wide) or 760px (standard). No horizontal scroll.</div></div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Do &amp; Don't</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-two-col">
+          <div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Use Robin Blue (#59c2eb) as the primary interactive accent — buttons, active states, borders.</div></div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Use contrast-safe status colours — #13795b success, #9a6700 warning, #a61b1b danger — as text on white.</div></div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Use Arial as the default UI and body font. Universal, no external load.</div></div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Use the frosted panel header: rgba(255,255,255,.58) with border-bottom on all panels.</div></div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Use chips for inline card metadata (partner, category, tools). Use pills for topbar status indicators.</div></div>
+            <div class="sg31-do"><div class="sg31-do-label">Do</div><div style="font-size:13px;">Wrap all JS in an IIFE and bind all events via addEventListener.</div></div>
+          </div>
+          <div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't use the old lighter success/warning/danger colours (#1f9d63, #e6a23c, #d9534f) as text on white — they fail contrast. They are retired in v3.1.</div></div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't use inline onclick= handlers. They fail silently in Ghost HTML blocks.</div></div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't use sharp corners — the rounded standard is the WBN design language.</div></div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't put body copy in Oswald — display/heading use only.</div></div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't use Libre Franklin — retired in v3.0. Arial handles all body copy.</div></div>
+            <div class="sg31-dont"><div class="sg31-dont-label">Don't</div><div style="font-size:13px;">Don't use dark backgrounds — the light gradient shell is the WBN standard.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg31-panel">
+      <div class="sg31-panel-header"><div class="sg31-panel-title">Deployment Checklist</div></div>
+      <div class="sg31-panel-body">
+        <div class="sg31-notice success">✓ Self-contained — no bleed outside wrapper div</div>
+        <div class="sg31-notice success">✓ Ghost-compatible — clean HTML/CSS/JS, no framework dependencies</div>
+        <div class="sg31-notice success">✓ All JS in IIFE — no global namespace pollution</div>
+        <div class="sg31-notice success">✓ All event binding via addEventListener — no inline onclick=</div>
+        <div class="sg31-notice success">✓ Admin panel — working password login and logout</div>
+        <div class="sg31-notice success">✓ localStorage — export (Download) and import (Upload) included</div>
+        <div class="sg31-notice success">✓ Sponsor / Advertising widget included</div>
+        <div class="sg31-notice success">✓ Version stamp and timestamp in footer</div>
+        <div class="sg31-notice success">✓ Responsive — single column on mobile</div>
+        <div class="sg31-notice success">✓ Robin Blue palette — v3.1 tokens applied</div>
+        <div class="sg31-notice success">✓ Contrast-safe status colours — v3.1 values</div>
+        <div class="sg31-notice success">✓ Rounded border-radius scale applied</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sg31-footer">
+    <span>WBN Global Inc.™ Style Guide v3.1 &nbsp;·&nbsp; DealStream™ · TrainingCast™ · WeatherCast™ · NewsCast™ · SpaceCast™ · WarCast™</span>
+    <span>04-09-26</span>
+  </div>
+</div>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('#wbn-sg31 .sg31-tab');
+  var secs = document.querySelectorAll('#wbn-sg31 .sg31-sec');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = this.getAttribute('data-sec');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      secs.forEach(function(s) { s.classList.remove('active'); });
+      this.classList.add('active');
+      var sec = document.getElementById('sg31-' + target);
+      if (sec) sec.classList.add('active');
+    });
+  });
+})();
+</script>
+</div>
